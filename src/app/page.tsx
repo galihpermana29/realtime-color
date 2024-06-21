@@ -42,7 +42,7 @@ const TestContainer = () => {
   };
 
   useEffect(() => {
-    const getChats = () => {
+    const getColor = () => {
       const unsub = onSnapshot(doc(db, "color", "1"), (doc) => {
         const { color } = doc.data() as { color: { hex: string } };
         setBgRandom(color.hex);
@@ -53,7 +53,7 @@ const TestContainer = () => {
       };
     };
 
-    getChats();
+    getColor();
   }, []);
 
   return (
